@@ -27,26 +27,29 @@ class TTButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return Material(
       borderRadius: BorderRadius.circular(52),
-      onTap: onPressed,
-      child: Container(
-        height: height,
-        width: width,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(52),
-          border: Border.all(
-            color: borderColor ?? Colors.transparent,
-          ),
-          color: backgroundColor,
-        ),
-        child: child ??
-            Center(
-              child: Text(
-                text ?? '',
-                style: St.body16600.copyWith(color: colorText ?? Cl.white),
-              ),
+      color: backgroundColor,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(52),
+        onTap: onPressed,
+        child: Container(
+          height: height,
+          width: width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(52),
+            border: Border.all(
+              color: borderColor ?? Colors.transparent,
             ),
+          ),
+          child: child ??
+              Center(
+                child: Text(
+                  text ?? '',
+                  style: St.body16600.copyWith(color: colorText ?? Cl.white),
+                ),
+              ),
+        ),
       ),
     );
   }
