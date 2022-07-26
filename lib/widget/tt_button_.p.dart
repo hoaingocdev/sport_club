@@ -11,7 +11,7 @@ class TTButton extends StatelessWidget {
   final Color? backgroundColor;
   final VoidCallback? onPressed;
   final Widget? child;
-  final String text;
+  final String? text;
 
   const TTButton({
     Key? key,
@@ -20,7 +20,7 @@ class TTButton extends StatelessWidget {
     this.colorText,
     this.onPressed,
     this.child,
-    required this.text,
+    this.text,
     this.backgroundColor,
     this.width,
   }) : super(key: key);
@@ -43,7 +43,7 @@ class TTButton extends StatelessWidget {
         child: child ??
             Center(
               child: Text(
-                text,
+                text ?? '',
                 style: St.body16600.copyWith(color: colorText ?? Cl.white),
               ),
             ),
