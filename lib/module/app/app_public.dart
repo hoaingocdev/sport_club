@@ -2,6 +2,8 @@ library app;
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sport_club/module/home/home_public.dart';
+import 'package:sport_club/module/module.dart';
 import 'package:sport_club/module/splash/splash_public.dart';
 import 'package:sport_club/widget/tt_environment.p.dart';
 import 'package:sport_club/widget/widget.dart';
