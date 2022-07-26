@@ -3,6 +3,7 @@
 ///---------------------------------------------------------------
 
 export './app/app_public.dart';
+export './favourite_player/favourite_player_public.dart';
 export './home/home_public.dart';
 export './onboarding/onboarding_public.dart';
 export './sign_in/sign_in_public.dart';

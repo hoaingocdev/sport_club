@@ -7,6 +7,7 @@
 class Id {
   Id._();
 
+  static const String ic_back_left = 'assets/images/ic_back_left.png';
   static const String ic_fb = 'assets/images/ic_fb.png';
   static const String ic_gg = 'assets/images/ic_gg.png';
   static const String ic_inbox = 'assets/images/ic_inbox.png';
