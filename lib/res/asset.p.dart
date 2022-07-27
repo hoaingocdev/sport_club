@@ -11,6 +11,8 @@ class Id {
   static const String ic_fb = 'assets/images/ic_fb.png';
   static const String ic_gg = 'assets/images/ic_gg.png';
   static const String ic_inbox = 'assets/images/ic_inbox.png';
+  static const String ic_polygon_left = 'assets/images/ic_polygon_left.png';
+  static const String ic_polygon_right = 'assets/images/ic_polygon_right.png';
   static const String img_club_logo = 'assets/images/img_club_logo.png';
   static const String img_logo = 'assets/images/img_logo.png';
   static const String img_logo1 = 'assets/images/img_logo1.png';

@@ -33,4 +33,14 @@ class St {
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle body10600 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 10,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle body10500 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
+  );
 }
