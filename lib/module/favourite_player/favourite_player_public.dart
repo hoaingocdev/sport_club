@@ -3,9 +3,11 @@ library favourite_player;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sport_club/model/model.dart';
+import 'package:sport_club/module/home/home_public.dart';
 import 'package:sport_club/res/asset.p.dart';
 import 'package:sport_club/res/color.p.dart';
 import 'package:sport_club/res/style.p.dart';
+import 'package:sport_club/utils/tt_route.p.dart';
 import 'package:sport_club/widget/tt_appbar_widget.p.dart';
 import 'package:sport_club/widget/widget.dart';
 

@@ -5,7 +5,7 @@ class _AppViewState extends TTState<_AppModel, _AppView> {
   Widget buildWithModel(BuildContext context, _AppModel model) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: createOnboarding(),
+      home: createHome(),
     );
     return Environment(
       backgroundChild: createSplash(),

@@ -28,5 +28,7 @@ class _FavouritePlayerModel extends TTChangeNotifier<_FavouritePlayerView> {
 
   void onSkipPressed() {}
 
-  void onConfirmPressed() {}
+  void onConfirmPressed() {
+    push(context, createHome());
+  }
 }

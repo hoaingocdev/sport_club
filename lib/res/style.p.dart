@@ -43,4 +43,9 @@ class St {
     fontSize: 10,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle body9400 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 9,
+    fontWeight: FontWeight.w400,
+  );
 }
