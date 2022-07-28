@@ -48,4 +48,39 @@ class St {
     fontSize: 9,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle body18500 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle body15600 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 15,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle body11400 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 11,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle body10400 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle body24500 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle body10700 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 10,
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle body20600 = const TextStyle(
+    fontFamily: Font.poppins,
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+  );
 }
