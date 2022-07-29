@@ -88,9 +88,9 @@ class _HomeContentViewState extends TTState<_HomeContentModel, _HomeContentView>
                   NextMatch(
                     onPressed: model.onNextMatchDetailsPressed,
                   ),
-                  SizedBox(height: 13),
-                  New(),
-                  SizedBox(height: 150),
+                  const SizedBox(height: 13),
+                  const New(),
+                  const SizedBox(height: 150),
                 ],
               ),
             ),
