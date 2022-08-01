@@ -15,6 +15,8 @@ class Id {
   static const String ic_cup = 'assets/images/ic_cup.png';
   static const String ic_fb = 'assets/images/ic_fb.png';
   static const String ic_fixture = 'assets/images/ic_fixture.png';
+  static const String ic_foodball = 'assets/images/ic_foodball.png';
+  static const String ic_football = 'assets/images/ic_football.png';
   static const String ic_gg = 'assets/images/ic_gg.png';
   static const String ic_home = 'assets/images/ic_home.png';
   static const String ic_inbox = 'assets/images/ic_inbox.png';
@@ -26,6 +28,7 @@ class Id {
   static const String ic_other_details = 'assets/images/ic_other_details.png';
   static const String ic_polygon_left = 'assets/images/ic_polygon_left.png';
   static const String ic_polygon_right = 'assets/images/ic_polygon_right.png';
+  static const String ic_red = 'assets/images/ic_red.png';
   static const String ic_shop = 'assets/images/ic_shop.png';
   static const String ic_ticket = 'assets/images/ic_ticket.png';
   static const String ic_vector = 'assets/images/ic_vector.png';

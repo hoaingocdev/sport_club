@@ -2,7 +2,7 @@ library home_content;
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sport_club/module/module.dart';
+import 'package:sport_club/module/next_match_details/next_match_details_public.dart';
 import 'package:sport_club/res/asset.p.dart';
 import 'package:sport_club/res/color.p.dart';
 import 'package:sport_club/res/style.p.dart';

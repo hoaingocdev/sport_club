@@ -23,50 +23,54 @@ class New extends StatelessWidget {
         const SizedBox(height: 20),
         buildItem3(),
         const SizedBox(height: 20),
-        Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Image.asset(
-              Id.img_background_green,
-              width: double.infinity,
-              height: 160,
-              fit: BoxFit.cover,
-            ),
-            Positioned(
-              top: 10,
-              left: -20,
-              child: Image.asset(Id.img_stadium),
-            ),
-            Positioned(
-              top: 27,
-              right: 20,
-              left: 152,
-              child: Column(
-                children: [
-                  Text(
-                    'VIP STADIUM TICKET',
-                    style: St.body18500.copyWith(color: Cl.white),
-                  ),
-                  const SizedBox(height: 14),
-                  Container(
-                    height: 30,
-                    width: 149,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Cl.white.withOpacity(0.2),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Get 54% OFF',
-                        style: St.body14400.copyWith(color: Cl.white),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
+        buildItem4(),
+      ],
+    );
+  }
+
+  Widget buildItem4() {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Image.asset(
+          Id.img_background_green,
+          width: double.infinity,
+          height: 160,
+          fit: BoxFit.cover,
         ),
+        Positioned(
+          top: 10,
+          left: -20,
+          child: Image.asset(Id.img_stadium),
+        ),
+        Positioned(
+          top: 27,
+          right: 20,
+          left: 152,
+          child: Column(
+            children: [
+              Text(
+                'VIP STADIUM TICKET',
+                style: St.body18500.copyWith(color: Cl.white),
+              ),
+              const SizedBox(height: 14),
+              Container(
+                height: 30,
+                width: 149,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Cl.white.withOpacity(0.2),
+                ),
+                child: Center(
+                  child: Text(
+                    'Get 54% OFF',
+                    style: St.body14400.copyWith(color: Cl.white),
+                  ),
+                ),
+              )
+            ],
+          ),
+        )
       ],
     );
   }
