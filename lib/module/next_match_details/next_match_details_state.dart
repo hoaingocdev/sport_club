@@ -4,150 +4,181 @@ class _NextMatchDetailsViewState extends TTState<_NextMatchDetailsModel, _NextMa
   @override
   Widget buildWithModel(BuildContext context, _NextMatchDetailsModel model) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Column(
-            children: [
-              buildTilte(),
-            ],
-          ),
-          Positioned(
-            top: 135,
-            left: 28,
-            right: 28,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                SizedBox(
-                  height: 500,
-                  child: Image.asset(
-                    Id.img_background_white,
-                    fit: BoxFit.cover,
-                  ),
+      body: SizedBox.expand(
+        child: Stack(
+          children: [
+            buildTilte(onPressed: model.onBackPressed),
+            Positioned(
+              top: 91 + 8 + device.padding.top,
+              left: 28,
+              right: 28,
+              bottom: 0,
+              child: SingleChildScrollView(
+                // padding: EdgeInsets.symmetric(vertical: ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    DevilsArenaStadium(
+                      detailsInfo: model.matchDetail,
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      'Matchs',
+                      style: St.body18500.copyWith(color: Cl.black),
+                    ),
+                    ListView.separated(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      separatorBuilder: (_, i) => const SizedBox(height: 20),
+                      itemCount: model.matchDetails.length,
+                      itemBuilder: (_, i) {
+                        return buildItem(
+                          detailsInfo: model.matchDetails[i],
+                          onPressed: model.onMatchReviewPressed,
+                        );
+                      },
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 28),
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        Id.ic_ball,
-                      ),
-                      const SizedBox(height: 13),
-                      Text(
-                        'Devils Arena Stadium',
-                        style: St.body14500.copyWith(color: Cl.darkGrey),
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        '9 May 2021',
-                        style: St.body11500.copyWith(color: Cl.darkGrey),
-                      ),
-                      const SizedBox(height: 18),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Image.asset(Id.ic_logo3),
-                          Column(
-                            children: [
-                              Text(
-                                'Kick Off (GMT+3)',
-                                style: St.body11500.copyWith(color: Cl.cl8C95B6),
-                              ),
-                              Text(
-                                '19.45',
-                                style: St.body27700.copyWith(color: Cl.cl8C95B6),
-                              ),
-                            ],
-                          ),
-                          Image.asset(
-                            Id.ic_logo,
-                            height: 66,
-                            width: 56,
-                            fit: BoxFit.cover,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 15),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              'Red D.',
-                              style: St.body16500.copyWith(color: Cl.black),
-                            ),
-                          ),
-                          Text(
-                            'Victory G.',
-                            style: St.body16500.copyWith(color: Cl.black),
-                          )
-                        ],
-                      ),
-                      const SizedBox(height: 28),
-                      Stack(
-                        children: [
-                          Image.asset(
-                            Id.img_background_green,
-                          ),
-                          Positioned(
-                            top: 17,
-                            left: 7,
-                            right: 7,
-                            child: Column(
-                              children: [
-                                Text(
-                                  'Match Countdown',
-                                  style: St.body16500.copyWith(color: Cl.white),
-                                ),
-                                const SizedBox(height: 25),
-                                Text(
-                                  '02   :   08   :  47   :   01',
-                                  style: St.body28700.copyWith(color: Cl.white),
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      'Days',
-                                      style: St.body14500.copyWith(color: Cl.white),
-                                    ),
-                                    Text(
-                                      'Hrs',
-                                      style: St.body14500.copyWith(color: Cl.white),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                      const SizedBox(height: 47),
-                    ],
-                  ),
-                )
-              ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
-  Widget buildTilte() {
+  Widget buildItem({
+    required MatchDetailsInfo detailsInfo,
+    VoidCallback? onPressed,
+  }) {
+    return Material(
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(18),
+        topRight: Radius.circular(18),
+      ),
+      color: Cl.stone,
+      child: InkWell(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(18),
+          topRight: Radius.circular(18),
+        ),
+        onTap: onPressed,
+        child: Column(
+          children: [
+            Container(
+              height: 49,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(18),
+                  topRight: Radius.circular(18),
+                ),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  buildRatio(
+                    text: '1',
+                    backgroundColor: Cl.clF02626,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: detailsInfo.colorA,
+                      style: St.body15600.copyWith(color: Colors.red),
+                      children: [
+                        const TextSpan(
+                          text: '  vs  ',
+                          style: TextStyle(
+                            fontSize: 7,
+                            color: Cl.cl01091C,
+                          ),
+                        ),
+                        TextSpan(
+                          text: detailsInfo.colorB,
+                          style: const TextStyle(
+                            color: Cl.green,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  buildRatio(
+                    text: '3',
+                    backgroundColor: Cl.green,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              height: 49,
+              color: Cl.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(Id.ic_calenda),
+                  const SizedBox(width: 13),
+                  Text(
+                    detailsInfo.day,
+                    style: St.body11400.copyWith(color: Cl.cl5B6897),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildRatio({
+    Color? backgroundColor,
+    required String text,
+  }) {
+    return Container(
+      height: 35,
+      width: 35,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: backgroundColor ?? Cl.clF02626,
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: St.body20600.copyWith(color: Cl.white),
+        ),
+      ),
+    );
+  }
+
+  Widget buildTilte({VoidCallback? onPressed}) {
     return Container(
       height: 185,
       decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(30),
-            bottomRight: Radius.circular(30),
-          ),
-          color: Cl.black),
-      padding: const EdgeInsets.only(top: 50, left: 31),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(30),
+          bottomRight: Radius.circular(30),
+        ),
+        color: Cl.black,
+      ),
+      padding: const EdgeInsets.only(top: 50, left: 17),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            Id.ic_back_left,
-            color: Cl.white,
+          Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: onPressed,
+              child: SizedBox(
+                height: 48,
+                width: 48,
+                child: Image.asset(
+                  Id.ic_back_left,
+                  color: Cl.white,
+                ),
+              ),
+            ),
           ),
           const SizedBox(width: 64),
           Text(
